@@ -44,17 +44,37 @@ function renderForecast() {
                 .then(function (data) {
                 console.log(data);
 
-                var dataSet1 = data.list[0];
-                var dataSet2 = data.list[8];
-                var dataSet3 = data.list[16];
-                var dataSet4 = data.list[24];
-                var dataSet5 = data.list[32];
+                var dataSet1 = data.list[4];
+                var dataSet2 = data.list[12];
+                var dataSet3 = data.list[20];
+                var dataSet4 = data.list[28];
+                var dataSet5 = data.list[36];
 
                 firstDay.children[0].textContent = reverseDate(dataSet1.dt_txt);
                 firstDay.children[1].setAttribute('src', 'http://openweathermap.org/img/w/' + dataSet1.weather[0].icon + '.png')
                 firstDay.children[2].textContent = convertTemp(dataSet1.main.temp);
                 firstDay.children[3].textContent = "Humidity: " + dataSet1.main.humidity + "%";
                 firstDay.children[4].textContent = "Wind: " + dataSet1.wind.speed + " mph";
+                secondDay.children[0].textContent = reverseDate(dataSet2.dt_txt);
+                secondDay.children[1].setAttribute('src', 'http://openweathermap.org/img/w/' + dataSet2.weather[0].icon + '.png')
+                secondDay.children[2].textContent = convertTemp(dataSet2.main.temp);
+                secondDay.children[3].textContent = "Humidity: " + dataSet2.main.humidity + "%";
+                secondDay.children[4].textContent = "Wind: " + dataSet2.wind.speed + " mph";
+                thirdDay.children[0].textContent = reverseDate(dataSet3.dt_txt);
+                thirdDay.children[1].setAttribute('src', 'http://openweathermap.org/img/w/' + dataSet3.weather[0].icon + '.png')
+                thirdDay.children[2].textContent = convertTemp(dataSet3.main.temp);
+                thirdDay.children[3].textContent = "Humidity: " + dataSet3.main.humidity + "%";
+                thirdDay.children[4].textContent = "Wind: " + dataSet3.wind.speed + " mph";
+                fourthDay.children[0].textContent = reverseDate(dataSet4.dt_txt);
+                fourthDay.children[1].setAttribute('src', 'http://openweathermap.org/img/w/' + dataSet4.weather[0].icon + '.png')
+                fourthDay.children[2].textContent = convertTemp(dataSet4.main.temp);
+                fourthDay.children[3].textContent = "Humidity: " + dataSet4.main.humidity + "%";
+                fourthDay.children[4].textContent = "Wind: " + dataSet4.wind.speed + " mph";
+                fifthDay.children[0].textContent = reverseDate(dataSet5.dt_txt);
+                fifthDay.children[1].setAttribute('src', 'http://openweathermap.org/img/w/' + dataSet5.weather[0].icon + '.png')
+                fifthDay.children[2].textContent = convertTemp(dataSet5.main.temp);
+                fifthDay.children[3].textContent = "Humidity: " + dataSet5.main.humidity + "%";
+                fifthDay.children[4].textContent = "Wind: " + dataSet5.wind.speed + " mph";
             });
         });
     results.classList.remove('hidden')
