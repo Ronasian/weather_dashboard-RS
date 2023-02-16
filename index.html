@@ -15,22 +15,22 @@
       <!-- search section on the left of page -->
         <h2>City Search</h2>
         <input placeholder="Enter city name"/>
-        <button>Search</button>
+        <button id="searchBtn">Search</button>
         <div id="history">
           <h3>Search History</h3>
           <!-- history will be rendered here -->
           <!-- city buttons will render info for that city -->
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
+          <button class="historyBtn">city</button>
+          <button class="historyBtn">city</button>
+          <button class="historyBtn">city</button>
+          <button class="historyBtn">city</button>
+          <button class="historyBtn">city</button>
+          <button class="historyBtn">city</button>
+          <button class="historyBtn">city</button>
+          <button class="historyBtn">city</button>
         </div>
       </aside>
-      <section>
+      <section id="results">
       <!-- weather information rendered here -->
         <div id="current-weather">
         <!-- section for current day's weather for searched city -->
@@ -39,6 +39,7 @@
           <p>Wind:</p>
           <p>Humidity:</p>
         </div>
+        <h2>5 Day Forecast:</h2>
         <div id="forecast">
         <!-- section for 5 day weather forecast -->
           <div class="days" id="day-1">

@@ -1,10 +1,6 @@
-* {
+body {
     margin: 0px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-body {
-    
 }
 
 header {
@@ -17,21 +13,60 @@ header {
 
 main {
     display: flex;
-    border: 1px solid;
 }
 
 aside {
     width: 20%;
     display: flex;
     flex-direction: column;
-    border: 1px solid;
+    align-items: center;
+}
+
+input {
+    width: 200px;
+    padding: 5px;
+}
+
+#searchBtn {
+    width: 100px;
+    padding: 5px;
+    margin: 15px;
+    background-color: #31708E;
+    color: #F7F9FB
+}
+
+#history {
+    width: 80%;
+    border-top: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.historyBtn {
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #e7e7e7;
+    border: none;
+}
+
+#results {
+    width: 60%;
 }
 
 #current-weather {
-    border: 1px solid;
+    background-color: #e7e7e7;
+    padding: 20px;
 }
 
 #forecast {
-    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+}
+
+.days {
+    background-color: #687864;
+    color: #F7F9FB;
 }
 
