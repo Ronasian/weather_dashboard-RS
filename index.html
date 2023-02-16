@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Dashboard RS</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type='text/css' href="./assets/css/style.css"/>
   </head>
   <body>
-    <h1>My Weather Dashboard</h1>
-    <aside>
-      <!-- search section -->
-      <h2>City Search</h2>
-      <input placeholder="Enter city name">
-      <button>Search</button>
+    <header>My Weather Dashboard</header>
+    <main>
+      <aside>
+      <!-- search section on the left of page -->
+        <h2>City Search</h2>
+        <input placeholder="Enter city name"/>
+        <button>Search</button>
         <div id="history">
           <h3>Search History</h3>
           <!-- history will be rendered here -->
@@ -28,52 +29,53 @@
           <button></button>
           <button></button>
         </div>
-    </aside>
-    <main>
-    <!-- weather information rendered here -->
-      <section id="current-weather">
-      <!-- section for current day's weather for searched city -->
-        <h2>City (mm/dd/yyyy) *icon*</h2>
-        <p>Temp:</p>
-        <p>Wind:</p>
-        <p>Humidity:</p>
-      </section>
-      <section id="forecast">
-      <!-- section for 5 day weather forecast -->
-        <div class="days" id="day-1">
-        <!-- card for first day of forecast -->
-          <h3>City (mm/dd/yyyy) *icon*</h3>
+      </aside>
+      <section>
+      <!-- weather information rendered here -->
+        <div id="current-weather">
+        <!-- section for current day's weather for searched city -->
+          <h2>City (mm/dd/yyyy) *icon*</h2>
           <p>Temp:</p>
           <p>Wind:</p>
           <p>Humidity:</p>
         </div>
-        <div class="days" id="day-2">
-        <!-- card for second day of forecast -->
-          <h3>City (mm/dd/yyyy) *icon*</h3>
-          <p>Temp:</p>
-          <p>Wind:</p>
-          <p>Humidity:</p>
-        </div>
-        <div class="days" id="day-3">
-        <!-- card for third day of forecast -->
-          <h3>City (mm/dd/yyyy) *icon*</h3>
-          <p>Temp:</p>
-          <p>Wind:</p>
-          <p>Humidity:</p>
-        </div>
-        <div class="days" id="day-4">
-        <!-- card for fourth day of forecast -->
-          <h3>City (mm/dd/yyyy) *icon*</h3>
-          <p>Temp:</p>
-          <p>Wind:</p>
-          <p>Humidity:</p>
-        </div>
-        <div class="days" id="day-5">
-        <!-- card for fifth day of forecast -->
-          <h3>City (mm/dd/yyyy) *icon*</h3>
-          <p>Temp:</p>
-          <p>Wind:</p>
-          <p>Humidity:</p>
+        <div id="forecast">
+        <!-- section for 5 day weather forecast -->
+          <div class="days" id="day-1">
+          <!-- card for first day of forecast -->
+            <h3>City (mm/dd/yyyy) *icon*</h3>
+            <p>Temp:</p>
+            <p>Wind:</p>
+            <p>Humidity:</p>
+          </div>
+          <div class="days" id="day-2">
+          <!-- card for second day of forecast -->
+            <h3>City (mm/dd/yyyy) *icon*</h3>
+            <p>Temp:</p>
+            <p>Wind:</p>
+            <p>Humidity:</p>
+          </div>
+          <div class="days" id="day-3">
+          <!-- card for third day of forecast -->
+            <h3>City (mm/dd/yyyy) *icon*</h3>
+            <p>Temp:</p>
+            <p>Wind:</p>
+            <p>Humidity:</p>
+          </div>
+          <div class="days" id="day-4">
+          <!-- card for fourth day of forecast -->
+            <h3>City (mm/dd/yyyy) *icon*</h3>
+            <p>Temp:</p>
+            <p>Wind:</p>
+            <p>Humidity:</p>
+          </div>
+          <div class="days" id="day-5">
+          <!-- card for fifth day of forecast -->
+            <h3>City (mm/dd/yyyy) *icon*</h3>
+            <p>Temp:</p>
+            <p>Wind:</p>
+            <p>Humidity:</p>
+          </div>
         </div>
       </section>
     </main>
