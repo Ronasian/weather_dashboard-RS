@@ -68,6 +68,8 @@ input {
 .days {
     background-color: #687864;
     color: #F7F9FB;
+    min-width: 180px;
+    text-align: center;
 }
 
 .hidden {

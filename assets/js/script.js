@@ -43,7 +43,7 @@ function renderForecast() {
             })
                 .then(function (data) {
                 console.log(data);
-                
+
                 var dataSet1 = data.list[0];
                 var dataSet2 = data.list[8];
                 var dataSet3 = data.list[16];
@@ -51,7 +51,10 @@ function renderForecast() {
                 var dataSet5 = data.list[32];
 
                 firstDay.children[0].textContent = reverseDate(dataSet1.dt_txt);
-                firstDay.children[1].textContent = data.list;
+                firstDay.children[1].setAttribute('src', 'http://openweathermap.org/img/w/' + dataSet1.weather[0].icon + '.png')
+                firstDay.children[2].textContent = convertTemp(dataSet1.main.temp);
+                firstDay.children[3].textContent = "Humidity: " + dataSet1.main.humidity + "%";
+                firstDay.children[4].textContent = "Wind: " + dataSet1.wind.speed + " mph";
             });
         });
     results.classList.remove('hidden')
@@ -59,10 +62,14 @@ function renderForecast() {
 
 function reverseDate(text) {
     var date = text.split(' ')[0].split('-');
-    var month = date[2];
-    var day = date[1];
+    var month = date[1];
+    var day = date[2];
     var year = date[0];
     return month + '/' + day + '/' + year;
+}
+
+function convertTemp(temp) {
+    return "Temp: " + Math.round(1.8 * (temp - 273) + 32) + '°F';
 }
 
 searchBtn.addEventListener('click', renderForecast);
