@@ -4,13 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather Dashboard</title>
+    <title>Weather Dashboard RS</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <body>
+    <h1>My Weather Dashboard</h1>
+    <aside>
+      <!-- search section -->
+      <h2>City Search</h2>
+      <input placeholder="Enter city name">
+      <button>Search</button>
+        <div id="history">
+          <h3>Search History</h3>
+          <!-- history will be rendered here -->
+          <!-- city buttons will render info for that city -->
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+    </aside>
     <main>
-        <h1>Welcome to My Website</h1>  
+    <!-- weather information rendered here -->
+      <section id="current-weather">
+      <!-- section for current day's weather for searched city -->
+        <h2>City (mm/dd/yyyy) *icon*</h2>
+        <p>Temp:</p>
+        <p>Wind:</p>
+        <p>Humidity:</p>
+      </section>
+      <section id="forecast">
+      <!-- section for 5 day weather forecast -->
+        <div class="days" id="day-1">
+        <!-- card for first day of forecast -->
+          <h3>City (mm/dd/yyyy) *icon*</h3>
+          <p>Temp:</p>
+          <p>Wind:</p>
+          <p>Humidity:</p>
+        </div>
+        <div class="days" id="day-2">
+        <!-- card for second day of forecast -->
+          <h3>City (mm/dd/yyyy) *icon*</h3>
+          <p>Temp:</p>
+          <p>Wind:</p>
+          <p>Humidity:</p>
+        </div>
+        <div class="days" id="day-3">
+        <!-- card for third day of forecast -->
+          <h3>City (mm/dd/yyyy) *icon*</h3>
+          <p>Temp:</p>
+          <p>Wind:</p>
+          <p>Humidity:</p>
+        </div>
+        <div class="days" id="day-4">
+        <!-- card for fourth day of forecast -->
+          <h3>City (mm/dd/yyyy) *icon*</h3>
+          <p>Temp:</p>
+          <p>Wind:</p>
+          <p>Humidity:</p>
+        </div>
+        <div class="days" id="day-5">
+        <!-- card for fifth day of forecast -->
+          <h3>City (mm/dd/yyyy) *icon*</h3>
+          <p>Temp:</p>
+          <p>Wind:</p>
+          <p>Humidity:</p>
+        </div>
+      </section>
     </main>
 	<script src="./assets/js/script.js"></script>
   </body>
