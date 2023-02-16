@@ -70,3 +70,7 @@ input {
     color: #F7F9FB;
 }
 
+.hidden {
+    display: none;
+}
+
