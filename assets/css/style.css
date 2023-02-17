@@ -55,9 +55,17 @@ input {
     width: 60%;
 }
 
+#weather-header {
+    display: flex;
+}
+
 #current-weather {
     background-color: #e7e7e7;
     padding: 20px;
+}
+
+img {
+    margin: 10px;
 }
 
 #forecast {
@@ -75,4 +83,6 @@ input {
 .hidden {
     display: none;
 }
+
+
 
