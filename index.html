@@ -14,20 +14,13 @@
       <aside>
       <!-- search section on the left of page -->
         <h2>City Search</h2>
-        <input placeholder="Enter city name"/>
+        <input placeholder="Davis, CA"/>
         <button id="searchBtn">Search</button>
         <div id="history">
           <h3>Search History</h3>
           <!-- history will be rendered here -->
-          <!-- city buttons will render info for that city -->
-          <button class="historyBtn">city</button>
-          <button class="historyBtn">city</button>
-          <button class="historyBtn">city</button>
-          <button class="historyBtn">city</button>
-          <button class="historyBtn">city</button>
-          <button class="historyBtn">city</button>
-          <button class="historyBtn">city</button>
-          <button class="historyBtn">city</button>
+          <!-- cities will render info for that city -->
+          <ul id="historyList"></ul>
         </div>
       </aside>
       <section class="hidden" id="results">
@@ -38,9 +31,9 @@
             <h2>City (mm/dd/yyyy)</h2>
             <img alt="icon"/>
           </div>
-          <p>Temp:</p>
-          <p>Wind:</p>
-          <p>Humidity:</p>
+          <p>Temp</p>
+          <p>Wind</p>
+          <p>Humidity</p>
         </div>
         <h2>5 Day Forecast:</h2>
         <div id="forecast">
@@ -49,41 +42,41 @@
           <!-- card for first day of forecast -->
             <h3>(mm/dd/yyyy) *icon*</h3>
             <img alt="icon"/>
-            <p>Temp:</p>
-            <p>Wind:</p>
-            <p>Humidity:</p>
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
           </div>
           <div class="days" id="day-2">
           <!-- card for second day of forecast -->
             <h3>(mm/dd/yyyy) *icon*</h3>
             <img alt="icon"/>
-            <p>Temp:</p>
-            <p>Wind:</p>
-            <p>Humidity:</p>
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
           </div>
           <div class="days" id="day-3">
           <!-- card for third day of forecast -->
             <h3>(mm/dd/yyyy) *icon*</h3>
             <img alt="icon"/>
-            <p>Temp:</p>
-            <p>Wind:</p>
-            <p>Humidity:</p>
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
           </div>
           <div class="days" id="day-4">
           <!-- card for fourth day of forecast -->
             <h3>(mm/dd/yyyy) *icon*</h3>
             <img alt="icon"/>
-            <p>Temp:</p>
-            <p>Wind:</p>
-            <p>Humidity:</p>
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
           </div>
           <div class="days" id="day-5">
           <!-- card for fifth day of forecast -->
             <h3>(mm/dd/yyyy) *icon*</h3>
             <img alt="icon"/>
-            <p>Temp:</p>
-            <p>Wind:</p>
-            <p>Humidity:</p>
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
           </div>
         </div>
       </section>

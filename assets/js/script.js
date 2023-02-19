@@ -1,6 +1,7 @@
 var userInput = document.querySelector('input');
 var searchBtn = document.querySelector('#searchBtn');
 var history = document.querySelector('#history');
+var historyList = document.querySelector('#historyList')
 var results = document.querySelector('#results');
 var currentWeather = document.querySelector('#current-weather');
 var weatherHeader = document.querySelector('#weather-header');
@@ -13,17 +14,62 @@ var fifthDay = document.querySelector('#day-5');
 
 var apiKey = '65ef1ab7716004b40ee3581702fa7229';
 
+var searchHistory = [];
+// renders history list under search history
+function renderHistory() {
+    // resets innerHTML before rendering
+    historyList.innerHTML = "";
+    // Render a new li with button for each searched city
+    for (var i = 0; i < searchHistory.length; i++) {
+        var search = searchHistory[i];
+        
+        var li = document.createElement("li");
+
+        var button = document.createElement("button");
+        
+        li.appendChild(button);
+        historyList.appendChild(li);
+        button.textContent = search;
+    }
+}
+
+function initHistory() {
+    // Get stored history from localStorage
+    var storedHistory = JSON.parse(localStorage.getItem("cities"));
+  
+    // If storedHistory was retrieved from localStorage, update the searchHistory array to it
+    if (storedHistory !== null) {
+      searchHistory = storedHistory;
+    }
+    // call to render history function for initialization
+    renderHistory();
+}
+
+function storeHistory() {
+    // Stringify and set key in localStorage to searchHistory array
+    localStorage.setItem("cities", JSON.stringify(searchHistory));
+}
+
 function renderForecast() {
     var input = userInput.value;
-    if (input.indexOf(', ') !== -1) {
-        var city = input.split(', ')[0];
-        var state = input.split(', ')[1];
-    } else {
-        var city = input.split(' ')[0];
-        var state = input.split(' ')[1];
+
+    // Return from function early if submitted userInput is blank
+    if (input === "") {
+      return;
+      // also if user input isn't already in the array
+    } else if (searchHistory.indexOf(input) === -1) {
+        // push new city to arry
+        searchHistory.push(input);
     }
-    console.log(city);
-    console.log(state);
+    //reset userInput value to blank
+    userInput.value = "";
+    // Store updated history array in localStorage, re-render the list
+    storeHistory();
+    renderHistory();
+
+    var city = input.split(', ')[0];
+    var state = input.split(', ')[1];
+
     var apiURL = 'http://api.openweathermap.org/geo/1.0/direct?q=' + 
     city + ',' + state + ',USA&limit=1&appid=' + apiKey;
     console.log(apiURL)
@@ -44,12 +90,13 @@ function renderForecast() {
             })
                 .then(function (data) {
                 console.log(data)
+                // easy access to each object for the 5 day forecast
                 var dataSet1 = data.list[4];
                 var dataSet2 = data.list[12];
                 var dataSet3 = data.list[20];
                 var dataSet4 = data.list[28];
                 var dataSet5 = data.list[36];
-
+                // each day accesses information from specific objects in the API array
                 firstDay.children[0].textContent = reverseDate(dataSet1.dt_txt);
                 firstDay.children[1].setAttribute('src', 'http://openweathermap.org/img/w/' + dataSet1.weather[0].icon + '.png')
                 firstDay.children[2].textContent = convertTemp(dataSet1.main.temp);
@@ -99,11 +146,9 @@ function renderForecast() {
 
                     results.classList.remove('hidden');
                 })
-                
         });
-    
 }
-
+// helper function to format date given by API
 function reverseDate(text) {
     var date = text.split(' ')[0].split('-');
     var month = date[1];
@@ -111,11 +156,22 @@ function reverseDate(text) {
     var year = date[0];
     return month + '/' + day + '/' + year;
 }
-
+// helper function that converts K to F
 function convertTemp(temp) {
     return "Temp: " + Math.round(1.8 * (temp - 273) + 32) + '°F';
 }
-
+// event listener for search button (renders forecast)
 searchBtn.addEventListener('click', renderForecast);
+// event listener for history buttons (sets userInput to button text content and renders forecast)
+historyList.addEventListener("click", function(event) {
+    var element = event.target;
+    // Checks if element is a button
+    if (element.matches("button") === true) {
+    // Store updated todos in localStorage, re-render the list
+    userInput.value = element.textContent;
+    renderForecast();
 
-console.log(firstDay.children[0].textContent);
+    }
+  });
+// inititalizes history everytime page loads
+initHistory();

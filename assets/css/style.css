@@ -26,9 +26,9 @@ input {
     width: 200px;
     padding: 5px;
 }
-
-#searchBtn {
-    width: 100px;
+/* style for both search and history buttons */
+button {
+    width: 150px;
     padding: 5px;
     margin: 15px;
     background-color: #31708E;
@@ -43,14 +43,6 @@ input {
     align-items: center;
 }
 
-.historyBtn {
-    width: 200px;
-    padding: 5px;
-    margin: 5px;
-    background-color: #e7e7e7;
-    border: none;
-}
-
 #results {
     width: 60%;
 }
@@ -62,8 +54,11 @@ input {
 #current-weather {
     background-color: #e7e7e7;
     padding: 20px;
+    border-bottom: 2px solid #31708E;
+    border-left: 2px solid #31708E;
+    border-right: 2px solid #31708E;
 }
-
+/* put margins on icons so that they dont stretch */
 img {
     margin: 10px;
 }
@@ -78,10 +73,17 @@ img {
     color: #F7F9FB;
     min-width: 180px;
     text-align: center;
+    border: 2px solid #97b88f
 }
-
+/* hides content until class is removed */
 .hidden {
     display: none;
+}
+/* history buttons */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0px;
 }
 
 
