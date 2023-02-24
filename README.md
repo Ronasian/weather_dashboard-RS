@@ -25,13 +25,11 @@ THEN I am again presented with current and future conditions for that city
 
 ## Deployed Application:
 ### Link:
-```
 https://ronasian.github.io/weather_dashboard-RS/
-```
+
 ### Images:
 ![initial-dash](./assets/images/initial%20page.jpg)
 ![functional-dash](./assets/images/functional%20application.jpg)
 
 ## License
-
 This project is licensed under the MIT License - see the LICENSE.md file for details
