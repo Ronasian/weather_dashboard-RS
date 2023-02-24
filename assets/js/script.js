@@ -67,11 +67,8 @@ function renderForecast() {
     storeHistory();
     renderHistory();
 
-    var city = input.split(', ')[0];
-    var state = input.split(', ')[1];
-
     var apiURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + 
-    city + ',' + state + ',USA&limit=1&appid=' + apiKey;
+    input + '&limit=1&appid=' + apiKey;
     console.log(apiURL)
     fetch(apiURL)
         .then(function (response) {
@@ -138,7 +135,7 @@ function renderForecast() {
                     console.log(data);
                     var currentDate = dayjs().format('(MM/DD/YYYY)');
                     
-                    weatherHeader.children[0].textContent = city + ", " + state + " " + currentDate;
+                    weatherHeader.children[0].textContent = data.name + ' ' + currentDate;
                     weatherHeader.children[1].setAttribute('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
                     currentWeather.children[1].textContent = convertTemp(data.main.temp);
                     currentWeather.children[2].textContent = "Humidity: " + data.main.humidity + "%";
